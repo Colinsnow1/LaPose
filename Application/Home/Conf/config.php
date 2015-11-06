@@ -14,7 +14,7 @@ return array(
     'db_user'    =>   'root',
     'db_pwd'     =>   '',
    // 'db_port'    =>    ,
-    'db_name'    =>    'igdufs', 
+    'db_name'    =>    'db_investment', 
     'db_charset' =>    'utf8',
     'DB_DEBUG'  =>  TRUE,
 
