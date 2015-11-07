@@ -15,6 +15,11 @@ class SystemloadController extends Controller {
 
         $this->assign('list',$list);// 赋值数据集
 
+         $tb_project_manager = D('tb_project_manager');    
+        $orderby['id']='desc';
+        $project_list=$tb_project_manager ->order($orderby)->limit(10)->select();
+        $this->assign('project_list',$project_list);// 赋值数据集
+
        $this -> display('./Application/Home/View/Systemload/systemload.php');
 
     }

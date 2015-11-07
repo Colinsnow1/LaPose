@@ -23,16 +23,25 @@ class ProjectController extends Controller {
         $this->assign('intro',$project_detailinfo["intro"]);
         $this->assign('registration_amount',$project_detailinfo["registration_amount"]);
 
-
-        // $Tb_project_manager = D('Tb_project_manager');    
-        // $project_manager=$Tb_project_manager ->where ("project_name ='$project_name'") ->find();
-        // $this->assign('manager_name',$project_manager["manager_name"]);
-
         
 
        $this -> display('./Application/Home/View/Project/project.php');
+    }
 
+    public function project_manager($manager_name){
+       header("Content-Type: text/html;charset=utf-8"); 
 
+       $Tb_project_manager = D('Tb_project_manager');    
+        $manager_info=$Tb_project_manager ->where ("manager_name ='$manager_name'") ->find();
+
+        $this->assign('manager_name',$manager_info["manager_name"]);
+        $this->assign('manager_position',$manager_info["manager_position"]);
+        $this->assign('weibo',$manager_info["weibo"]);
+        $this->assign('location',$manager_info["location"]);
+        $this->assign('intro',$manager_info["intro"]);
+
+       $this -> display('./Application/Home/View/Manager/manager.php');
+    
 
     }
 

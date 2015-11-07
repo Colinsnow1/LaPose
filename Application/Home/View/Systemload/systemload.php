@@ -41,6 +41,31 @@
 				 </tr>	
 	   </table>
    </div>
+   <div class="project_list">
+       <table border="1" class="table table-striped table-bordered table-hover">
+	              <tr>
+				      <td>project_name</td>
+					  <td>project_manager</td>
+					  
+				 </tr>	
+       <volist name="project_list" id="vo">
+			     <tr>
+				      <td>{$vo.project_name}</td>
+					  <td>
+					  <?php
+					  echo "<a href='__ROOT__/index.php/Home/Project/project_manager/?manager_name=".$vo['manager_name']."'>$vo[manager_name]</a>";
+					  ?>
+					  </td>
+					  
+				 </tr>		
+	   </volist>
+	             <tr>
+				      
+					  <td></td>
+					  <td><a href="__ROOT__/index.php/Home/Moreinfo/moreinfo">更多..</a></td>
+				 </tr>	
+	   </table>
+   </div>
 
-</body>a
+</body>
 </html>

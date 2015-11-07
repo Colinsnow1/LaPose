@@ -38,6 +38,28 @@
 				 </tr>	
 	   </table>
    </div>
+   <div class="project_list">
+       <table border="1" class="table table-striped table-bordered table-hover">
+	              <tr>
+				      <td>project_name</td>
+					  <td>project_manager</td>
+					  
+				 </tr>	
+       <?php if(is_array($project_list)): $i = 0; $__LIST__ = $project_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+				      <td><?php echo ($vo["project_name"]); ?></td>
+					  <td>
+					  <?php
+ echo "<a href='/LaPose/index.php/Home/Project/project_manager/?manager_name=".$vo['manager_name']."'>$vo[manager_name]</a>"; ?>
+					  </td>
+					  
+				 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+	             <tr>
+				      
+					  <td></td>
+					  <td><a href="/LaPose/index.php/Home/Moreinfo/moreinfo">更多..</a></td>
+				 </tr>	
+	   </table>
+   </div>
 
-</body>a
+</body>
 </html>
