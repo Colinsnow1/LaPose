@@ -20,6 +20,13 @@ class InvestfirminfoController extends Controller {
         $firm_detailinfo=$Tb_amount_tran ->where ("invest_firm_name ='$firm_name'") ->order($orderby)->limit(10)->select();
         $this->assign('firm_detailinfo',$firm_detailinfo);
 
+        $Tb_invest_firm_features_1=D('Tb_invest_firm_features_1');
+        $invest_firm_features=$Tb_invest_firm_features_1 ->where ("机构名称 ='$firm_name'") ->find();
+        $this->assign('invest_firm_features',$invest_firm_features);
+     //   $invest_firm_features_json = json_encode($invest_firm_features);
+       // $this->assign('invest_firm_features_json',$invest_firm_features_json);
+
+
      $this -> display('./Application/Home/View/Investfirminfo/investfirminfo.php');
 
     }
